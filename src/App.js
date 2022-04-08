@@ -1,13 +1,13 @@
 import './App.css';
-import Homepage from './components/Homepage.js'
+import Homepage from './components/Homepage'
 
 function App() {
+  
   return (
-    <div >
-      <Homepage/>
-    </div>
-  );  
+    <>
+      <Homepage />
+    </>
+  );
 }
-
 
 export default App;

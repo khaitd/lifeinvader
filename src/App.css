@@ -1,0 +1,57 @@
+.create-post-modal {
+  border: 1px solid #333;
+}
+
+.create-post-modal-hidden {
+  border: 1px solid #333;
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  padding: 1% 5%;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.home-link {
+  font-size: 2em;
+  font-weight: bold;
+  color: #d33;
+  text-decoration: none;
+}
+
+.timeline {
+  margin-top: 5%;
+  background-color: #eee;
+}
+
+.post {
+  max-width: 23%;
+  background-color: #fff;
+  height: min-content;
+  border-radius: 10px;
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.post-content {
+  font-size: 1.3em;
+  line-height: 1.7em;
+  padding: 0 4%;
+}
+
+.post-feed {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}

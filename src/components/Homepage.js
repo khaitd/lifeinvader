@@ -1,14 +1,15 @@
-import Timeline from './Timeline'
-import Sidebar from './Sidebar'
+import Timeline from "./Timeline"
+import Sidebar from "./Sidebar"
+import Navbar from "./Navbar"
 
 const Homepage = () => {
-    return (
-        <div> 
-            <h2> Homepage </h2>
-            <Timeline/>
-            <Sidebar/>
-        </div>
-    )
+  return(
+    <div>
+      <Navbar />
+      <Timeline />
+      <Sidebar />
+    </div>
+  )
 }
 
 export default Homepage;

@@ -1,44 +1,35 @@
-import { useEffect, useState } from "react";
-
+import { useEffect, useState } from 'react';
+import Post from './Post';
+import CreatePostModal from './CreatePostModal'
 
 const Timeline = () => {
-    const [posts, setPosts] = useState([])
-    useEffect(async () => {
-       // console.log("rendering timeline")
-        // let res = await fetch('https://raw.githubusercontent.com/rmdashrfv/lifeinvader/main/src/data/posts.json')
-        // let req = await res.json()
-        // setPosts(res)
-        
-        //IIFE
-        (async () => {
-            let req = await fetch('https://raw.githubusercontent.com/rmdashrfv/lifeinvader/main/src/data/posts.json')
-            let res = await req.json()
-            setPosts(res)
-        })()
-     
-   
-    }, [])
+  const [posts, setPosts] = useState([])
+  const [newPostModalVisible, setNewPostModalVisible] = useState(false)
 
-    return (
-        <div>
-
-
-            <h2> Timeline </h2>
-            {
-                posts.map((element) => {
-                    return (
-                        <div>
-                           <p> Post by {element.username}</p>
-                           <p> {element.content}</p>
-                        </div>
-                    )
-                })
-
-
-            }
-           
-        </div>
-    )
+  useEffect(() => {
+    // IIFE: immediately invoked function expression
+    (async () => {
+      let req = await fetch('https://raw.githubusercontent.com/rmdashrfv/lifeinvader/main/src/data/posts.json')
+      let res = await req.json()
+      setPosts(res)
+    })()
+  }, [])
+  
+  return (
+    <div className="timeline">
+      <button onClick={() => { setNewPostModalVisible(!newPostModalVisible) }}>+ New Post</button>
+      <CreatePostModal newPostModalVisible={newPostModalVisible} />
+      <div className="post-feed">
+        {
+          posts.map((post) => {
+            return(
+              <Post key={post.id} post={post} />
+            )
+          })
+        }
+      </div>
+    </div>
+  )
 }
 
 export default Timeline;
